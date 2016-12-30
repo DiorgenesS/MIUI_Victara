@@ -1,0 +1,3 @@
+post-build=motorola/cm_victara/victara:6.0.1/M4B30X/ea25ac4034:userdebug/test-keys
+post-timestamp=1482312487
+pre-device=victara
