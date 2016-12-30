@@ -11,3 +11,6 @@ rm -rf out/target_files/SYSTEM/vendor/preinstall
 
 #Fix to patch_bootimg.sh (kernel in lzma)
 cp -f other/boot.img out/target_files/BOOTABLE_IMAGES/
+
+#Added device features
+cp -f other/victara.xml out/target_files/SYSTEM/etc/device_features
