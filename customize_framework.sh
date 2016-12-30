@@ -38,3 +38,8 @@ function applyPatch() {
 		 cd ..
 	done
 }
+
+if [ $2 = "$BUILD_OUT/framework" ]
+then
+    applyPatch "overlay/framework"
+fi
