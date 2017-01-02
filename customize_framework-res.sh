@@ -37,3 +37,8 @@ function mergyXmlPart() {
 		$XMLMERGYTOOL $src $dst
 	done
 }
+
+if [ $1 = "framework-res/res" ]
+then
+  $XMLMERGYTOOL $1/values $2/values
+fi
