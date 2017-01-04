@@ -9,15 +9,13 @@ private-phone-apps := \
 	com.qualcomm.location \
 	com.qualcomm.services.location \
 	KeyChain \
-	LatinIME \
 	LiveWallpapers \
 	NfcNci \
 	PacProcessor \
 	PicoTts \
 	PrintSpooler \
 	Stk \
-	telresources \
-	webview 
+	telresources 
 
 private-phone-priv-apps := \
 	AudioFX \
@@ -29,7 +27,6 @@ private-phone-priv-apps := \
 	ExternalStorageProvider \
 	FusedLocation \
 	InputDevices \
-	OneTimeInitializer \
 	ProxyHandler \
 	Screencast \
 	SharedStorageBackup \
