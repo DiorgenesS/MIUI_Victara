@@ -75,3 +75,7 @@ local-pre-zip-misc:
 	rm -rf $(ZIP_DIR)/system/lib/libweibosdkcore_sogou.so
 	rm -rf $(ZIP_DIR)/system/lib/libxmpass_sdk_patcher.so
 	rm -rf $(ZIP_DIR)/system/lib/xmpass_libweibosdkcore.so
+	@echo remove unnecessary files!
+	rm -rf $(ZIP_DIR)/system/etc/CHANGELOG-CM.txt
+	rm -rf $(ZIP_DIR)/system/etc/CHANGES.txt
+	rm -rf $(ZIP_DIR)/system/recovery-from-boot.bak
