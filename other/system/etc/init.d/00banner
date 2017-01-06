@@ -1,0 +1,12 @@
+#!/system/bin/sh
+#
+# Print startup info
+#
+L="log -p i -t cm"
+
+$L   " __  __ ___ _   _ ___    ___  "; 
+$L   "|  \/  |_ _| | | |_ _|  ( _ ) ";
+$L   "| |\/| || || | | || |   / _ \ ";
+$L   "| |  | || || |_| || |  | (_) |";
+$L   "|_|  |_|___|\___/|___|  \___/ ";
+$L "Welcome to Android `getprop ro.build.version.release` / MIUI-`getprop ro.miui.release`";
