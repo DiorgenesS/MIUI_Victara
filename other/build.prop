@@ -1,3 +1,5 @@
+ro.setupwizard.mode=OPTIONAL
+ro.com.google.gmsversion=6.0_r10
 persist.sys.klo=on
 persist.sys.mcd_config_file=/system/etc/mcd_default.conf
 persist.sys.miui_feature_config=/system/etc/miui_feature/lite.conf
