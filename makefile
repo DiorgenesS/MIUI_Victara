@@ -55,27 +55,27 @@ include $(PORT_BUILD)/porting.mk
 local-pre-zip-misc:
 	$(TOOLS_DIR)/post_process_props.py out/ZIP/system/build.prop other/build.prop
 	@echo copying files!
-	cp -rf other/system $(ZIP_DIR)/
+	$(hide) cp -rf other/system $(ZIP_DIR)/
 	@echo goodbye! miui prebuilt binaries!
-	rm -rf $(ZIP_DIR)/system/bin/app_process32_vendor
-	cp -rf stockrom/system/bin/app_process32 $(ZIP_DIR)/system/bin/app_process32
+	$(hide) rm -rf $(ZIP_DIR)/system/bin/app_process32_vendor
+	$(hide) cp -rf stockrom/system/bin/app_process32 $(ZIP_DIR)/system/bin/app_process32
 	@echo remove unnecessary libs!
-	rm -rf $(ZIP_DIR)/system/lib64
-	rm -rf $(ZIP_DIR)/system/lib/libDecRes_sdk.so
-	rm -rf $(ZIP_DIR)/system/lib/libjni_eglfence.so
-	rm -rf $(ZIP_DIR)/system/lib/libjni_filtershow_filters.so
-	rm -rf $(ZIP_DIR)/system/lib/libjni_jpegstream.so
-	rm -rf $(ZIP_DIR)/system/lib/libjni_latinime.so
-	rm -rf $(ZIP_DIR)/system/lib/libjni_terminal.so
-	rm -rf $(ZIP_DIR)/system/lib/librsjni.so
-	rm -rf $(ZIP_DIR)/system/lib/libminivenus.so
-	rm -rf $(ZIP_DIR)/system/lib/libmresearch.so
-	rm -rf $(ZIP_DIR)/system/lib/libsecurities_sdk.so
-	rm -rf $(ZIP_DIR)/system/lib/libwebp.so
-	rm -rf $(ZIP_DIR)/system/lib/libweibosdkcore_sogou.so
-	rm -rf $(ZIP_DIR)/system/lib/libxmpass_sdk_patcher.so
-	rm -rf $(ZIP_DIR)/system/lib/xmpass_libweibosdkcore.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib64
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libDecRes_sdk.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libjni_eglfence.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libjni_filtershow_filters.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libjni_jpegstream.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libjni_latinime.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libjni_terminal.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/librsjni.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libminivenus.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libmresearch.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libsecurities_sdk.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libwebp.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libweibosdkcore_sogou.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/libxmpass_sdk_patcher.so
+	$(hide) rm -rf $(ZIP_DIR)/system/lib/xmpass_libweibosdkcore.so
 	@echo remove unnecessary files!
-	rm -rf $(ZIP_DIR)/system/etc/CHANGELOG-CM.txt
-	rm -rf $(ZIP_DIR)/system/etc/CHANGES.txt
-	rm -rf $(ZIP_DIR)/system/recovery-from-boot.bak
+	$(hide) rm -rf $(ZIP_DIR)/system/etc/CHANGELOG-CM.txt
+	$(hide) rm -rf $(ZIP_DIR)/system/etc/CHANGES.txt
+	$(hide) rm -rf $(ZIP_DIR)/system/recovery-from-boot.bak
