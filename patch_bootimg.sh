@@ -17,7 +17,7 @@ cp -f $PREBUILT_BOOT_DIR/$TARGET_BIT/init $TARGET_BOOT_DIR/ramdisk/init
 if [ -d overlay/boot/ramdisk ];then
 cp -rf overlay/boot/ramdisk/* $TARGET_BOOT_DIR/ramdisk/
 fi
-$MKBOOTFS $TARGET_BOOT_DIR/ramdisk | gzip > $TARGET_BOOT_DIR/ramdisk.gz
+$MKBOOTFS $TARGET_BOOT_DIR/ramdisk | lzma > $TARGET_BOOT_DIR/ramdisk.gz
 
 
 OLDCMDLINE=$(cat $TARGET_BOOT_DIR/boot.img-cmdline)
