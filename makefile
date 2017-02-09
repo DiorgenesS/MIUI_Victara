@@ -54,8 +54,6 @@ include $(PORT_BUILD)/porting.mk
 #pre_install_data_packages := $(TMP_DIR)/pre_install_apk_pkgname.txt
 local-pre-zip-misc:
 	$(TOOLS_DIR)/post_process_props.py out/ZIP/system/build.prop other/build.prop
-	@echo copying files!
-	$(hide) cp -rf other/system $(ZIP_DIR)/
 	@echo goodbye! miui prebuilt binaries!
 	$(hide) rm -rf $(ZIP_DIR)/system/bin/app_process32_vendor
 	$(hide) cp -rf stockrom/system/bin/app_process32 $(ZIP_DIR)/system/bin/app_process32
@@ -80,6 +78,8 @@ local-pre-zip-misc:
 	$(hide) rm -rf $(ZIP_DIR)/system/etc/CHANGES.txt
 	$(hide) rm -rf $(ZIP_DIR)/system/recovery-from-boot.bak
 	$(hide) rm -rf $(ZIP_DIR)/system/media/audio/*
+	@echo copying files!
+	$(hide) cp -rf other/system $(ZIP_DIR)/
 	@echo use only miui sounds!
 	$(hide) cp -rf $(PORT_ROOT)/miui/system/media/$(local-density)/audio/* $(ZIP_DIR)/system/media/audio
 	$(hide) rm -rf $(ZIP_DIR)/system/media/audio/create_symlink_for_audio-timestamp
