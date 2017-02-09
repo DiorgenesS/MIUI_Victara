@@ -13,13 +13,13 @@ ro.build.version.security_patch=2016-12-01
 ro.build.version.base_os=
 ro.build.date=Wed Dec 21 01:28:07 PST 2016
 ro.build.date.utc=1482312487
-ro.build.type=userdebug
-ro.build.user=jenkins
-ro.build.host=cyanogenmod
-ro.build.tags=test-keys
-ro.build.flavor=cm_victara-userdebug
+ro.build.type=user
+ro.build.user=dio
+ro.build.host=dio
+ro.build.tags=release-keys
+ro.build.flavor=miui_victara-user
 ro.product.brand=motorola
-ro.product.name=cm_victara
+ro.product.name=victara
 ro.product.device=victara
 ro.product.mod_device=
 ro.product.board=MSM8974
@@ -37,8 +37,8 @@ ro.board.platform=msm8974
 ro.build.characteristics=nosdcard
 ro.cm.device=victara
 # Do not try to parse description, fingerprint, or thumbprint
-ro.build.description=cm_victara-userdebug 6.0.1 MOB31K e1873be4c1 test-keys
-ro.build.fingerprint=motorola/victara/victara:6.0.1/MOB31K/e1873be4c1:userdebug/release-keys
+ro.build.description=victara-user 6.0.1 MOB31K e1873be4c1 release-keys
+ro.build.fingerprint=motorola/victara/victara:6.0.1/MOB31K/e1873be4c1:user/release-keys
 # end build properties
 #
 # from device/motorola/victara/system.prop
@@ -154,7 +154,6 @@ dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=2m
 dalvik.vm.heapmaxfree=8m
 dalvik.vm.dex2oat-swap=false
-ro.error.receiver.system.apps=org.cyanogenmod.bugreport
 ro.com.google.clientidbase=android-motorola
 ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
 ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
@@ -175,7 +174,7 @@ ro.cm.version=13.0-20161221-SNAPSHOT-ZNH5YAO3Y9-victara
 ro.cm.releasetype=SNAPSHOT
 ro.modversion=MIUI 8 by Dio_S
 ro.cmlegal.url=https://cyngn.com/legal/privacy-policy
-ro.cm.display.version=13.0-20161221-SNAPSHOT-ZNH5YAO3Y9-victara
+ro.cm.display.version=MIUI 8 by Dio_S
 ro.config.ringtone=Orion.ogg
 persist.sys.dalvik.vm.lib.2=libart.so
 dalvik.vm.isa.arm.variant=krait
