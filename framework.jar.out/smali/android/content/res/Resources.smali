@@ -934,9 +934,14 @@
     .line 2176
     invoke-static {v0}, Landroid/content/pm/ActivityInfo;->activityInfoConfigToNative(I)I
 
-    move-result v0
+    move-result v2
 
-    .line 2177
+    const/high16 v3, -0x80000000
+
+    and-int/2addr v3, v0
+
+    or-int v0, v2, v3
+
     or-int/2addr v0, v4
 
     .line 2182

@@ -317,7 +317,7 @@
 
     .line 1358
     :pswitch_1
-    const-string/jumbo v0, "activityStart"
+    const-string v0, "activityStart"
 
     invoke-static {v12, v13, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
@@ -349,6 +349,8 @@
 
     invoke-static {v0, v9, v3}, Landroid/app/ActivityThread;->-wrap11(Landroid/app/ActivityThread;Landroid/app/ActivityThread$ActivityClientRecord;Landroid/content/Intent;)V
 
+    invoke-static {}, Landroid/app/ActivityThreadInjector;->clearCachedDrawables()V
+
     .line 1364
     invoke-static {v12, v13}, Landroid/os/Trace;->traceEnd(J)V
 
@@ -357,7 +359,7 @@
     .line 1367
     .end local v9    # "r":Landroid/app/ActivityThread$ActivityClientRecord;
     :pswitch_2
-    const-string/jumbo v0, "activityRestart"
+    const-string v0, "activityRestart"
 
     invoke-static {v12, v13, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
@@ -380,7 +382,7 @@
     .line 1373
     .end local v9    # "r":Landroid/app/ActivityThread$ActivityClientRecord;
     :pswitch_3
-    const-string/jumbo v0, "activityPause"
+    const-string v0, "activityPause"
 
     invoke-static {v12, v13, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
