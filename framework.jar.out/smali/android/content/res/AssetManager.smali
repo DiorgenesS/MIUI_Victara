@@ -257,6 +257,8 @@
 
     .line 107
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
+
+    invoke-static {p0}, Landroid/miui/ResourcesManager;->addSystemAssets(Landroid/content/res/AssetManager;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -318,6 +320,8 @@
 
     .line 128
     invoke-direct {p0, v1}, Landroid/content/res/AssetManager;->init(Z)V
+
+    invoke-static {p0}, Landroid/miui/ResourcesManager;->addSystemAssets(Landroid/content/res/AssetManager;)V
 
     .line 121
     return-void
