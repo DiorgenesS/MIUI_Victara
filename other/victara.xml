@@ -27,7 +27,7 @@
     <!--whether the device supports page layout-->
     <bool name="support_page_layout">false</bool>
     <!--whether the device supports record param-->
-    <bool name="support_record_param">false</bool>
+    <bool name="support_record_param">true</bool>
     <!--whether the device supports interview record param-->
     <bool name="support_interview_record_param">false</bool>
     <!--whether the device supports stereo record-->
