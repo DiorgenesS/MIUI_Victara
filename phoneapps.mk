@@ -5,6 +5,7 @@ private-phone-apps := \
 	BasicDreams \
 	Bluetooth \
 	BluetoothExt \
+	BluetoothMidiService \
 	CertInstaller \
 	com.qualcomm.location \
 	com.qualcomm.services.location \
@@ -15,7 +16,8 @@ private-phone-apps := \
 	PicoTts \
 	PrintSpooler \
 	Stk \
-	telresources 
+	telresources \
+	UserDictionaryProvider 
 
 private-phone-priv-apps := \
 	AudioFX \
