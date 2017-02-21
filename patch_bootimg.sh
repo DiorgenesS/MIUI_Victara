@@ -10,10 +10,6 @@ mkdir -p $TARGET_BOOT_DIR/ramdisk
 cd $TARGET_BOOT_DIR/ramdisk
 cpio -i < ../boot.img-ramdisk
 cd - > /dev/null
-if [ ! -f $TARGET_BOOT_DIR/ramdisk/init_vendor ];then
-mv $TARGET_BOOT_DIR/ramdisk/init $TARGET_BOOT_DIR/ramdisk/init_vendor
-fi
-cp -f $PREBUILT_BOOT_DIR/$TARGET_BIT/init $TARGET_BOOT_DIR/ramdisk/init
 if [ -a $TARGET_BOOT_DIR/ramdisk/init.superuser.rc ];then
 rm -rf $TARGET_BOOT_DIR/ramdisk/init.superuser.rc
 fi

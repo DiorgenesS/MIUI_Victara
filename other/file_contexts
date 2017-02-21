@@ -873,3 +873,7 @@
 
 # bash
 /system/xbin/bash                               u:object_r:shell_exec:s0
+
+# miui
+/system/bin/ssServices u:object_r:zygote_exec:s0
+/system/bin/namespaceInit u:object_r:zygote_exec:s0
