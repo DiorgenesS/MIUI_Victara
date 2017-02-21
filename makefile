@@ -83,3 +83,6 @@ local-pre-zip-misc:
 	@echo use only miui sounds!
 	$(hide) cp -rf $(PORT_ROOT)/miui/system/media/$(local-density)/audio/* $(ZIP_DIR)/system/media/audio
 	$(hide) rm -rf $(ZIP_DIR)/system/media/audio/create_symlink_for_audio-timestamp
+	@echo use roboto fonts!
+	$(hide) cp -rf stockrom/system/fonts/Roboto-Bold.ttf $(ZIP_DIR)/system/fonts/Miui-Bold.ttf
+	$(hide) cp -rf stockrom/system/fonts/Roboto-Regular.ttf $(ZIP_DIR)/system/fonts/Miui-Regular.ttf
