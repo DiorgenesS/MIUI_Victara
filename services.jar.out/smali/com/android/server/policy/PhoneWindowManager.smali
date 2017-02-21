@@ -8093,6 +8093,740 @@
     goto/16 :goto_10
 .end method
 
+.method private updateSystemBarsLw(Landroid/view/WindowManagerPolicy$WindowState;III)I
+    .locals 28
+    .param p1, "win"    # Landroid/view/WindowManagerPolicy$WindowState;
+    .param p2, "oldVis"    # I
+    .param p3, "vis"    # I
+
+    .prologue
+    .line 7596
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/PhoneWindowManager;->isStatusBarKeyguard()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_0
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHideLockScreen:Z
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_a
+
+    .line 7598
+    :cond_0
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v20, v0
+
+    .line 7599
+    .local v20, "transWin":Landroid/view/WindowManagerPolicy$WindowState;
+    :goto_0
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarController:Lcom/android/server/policy/StatusBarController;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v20
+
+    move/from16 v2, p3
+
+    move/from16 v3, p2
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/policy/StatusBarController;->applyTranslucentFlagLw(Landroid/view/WindowManagerPolicy$WindowState;II)I
+
+    move-result p3
+
+    .line 7600
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarController:Lcom/android/server/policy/BarController;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v20
+
+    move/from16 v2, p3
+
+    move/from16 v3, p2
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/policy/BarController;->applyTranslucentFlagLw(Landroid/view/WindowManagerPolicy$WindowState;II)I
+
+    move-result p3
+
+    .line 7603
+    invoke-interface/range {p1 .. p1}, Landroid/view/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v24
+
+    move-object/from16 v0, v24
+
+    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->type:I
+
+    move/from16 v23, v0
+
+    .line 7604
+    .local v23, "type":I
+    const/16 v24, 0x7d0
+
+    move/from16 v0, v23
+
+    move/from16 v1, v24
+
+    if-ne v0, v1, :cond_b
+
+    const/16 v19, 0x1
+
+    .line 7605
+    .local v19, "statusBarHasFocus":Z
+    :goto_1
+    if-eqz v19, :cond_1
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/PhoneWindowManager;->isStatusBarKeyguard()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_c
+
+    .line 7617
+    :cond_1
+    :goto_2
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/PhoneWindowManager;->areTranslucentBarsAllowed()Z
+
+    move-result v24
+
+    if-nez v24, :cond_2
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v24
+
+    if-eq v0, v1, :cond_2
+
+    .line 7618
+    const v24, 0x3fff7fff
+
+    and-int p3, p3, v24
+
+    .line 7624
+    :cond_2
+    move/from16 v0, p3
+
+    and-int/lit16 v0, v0, 0x1000
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_e
+
+    const/4 v11, 0x1
+
+    .line 7626
+    .local v11, "immersiveSticky":Z
+    :goto_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v24, v0
+
+    if-eqz v24, :cond_10
+
+    .line 7627
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mTopFullscreenOpaqueWindowState:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v24, v0
+
+    const/16 v25, 0x0
+
+    invoke-static/range {v24 .. v25}, Landroid/view/WindowManagerPolicyControl;->getWindowFlags(Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)I
+
+    move-result v24
+
+    move/from16 v0, v24
+
+    and-int/lit16 v0, v0, 0x400
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_f
+
+    const/4 v9, 0x1
+
+    .line 7630
+    .local v9, "hideStatusBarWM":Z
+    :goto_4
+    and-int/lit8 v24, p3, 0x4
+
+    if-eqz v24, :cond_11
+
+    const/4 v8, 0x1
+
+    .line 7632
+    .local v8, "hideStatusBarSysui":Z
+    :goto_5
+    and-int/lit8 v24, p3, 0x2
+
+    if-eqz v24, :cond_12
+
+    const/4 v7, 0x1
+
+    .line 7635
+    .local v7, "hideNavBarSysui":Z
+    :goto_6
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v24, v0
+
+    if-eqz v24, :cond_14
+
+    .line 7636
+    if-nez v9, :cond_13
+
+    .line 7637
+    if-eqz v8, :cond_3
+
+    .line 7636
+    if-nez v11, :cond_13
+
+    .line 7638
+    :cond_3
+    move/from16 v22, v19
+
+    .line 7641
+    :goto_7
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBar:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v24, v0
+
+    if-eqz v24, :cond_15
+
+    if-eqz v7, :cond_15
+
+    .line 7642
+    move/from16 v21, v11
+
+    .line 7644
+    :goto_8
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v14
+
+    .line 7645
+    .local v14, "now":J
+    move-object/from16 v0, p0
+
+    iget-wide v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mPendingPanicGestureUptime:J
+
+    move-wide/from16 v24, v0
+
+    const-wide/16 v26, 0x0
+
+    cmp-long v24, v24, v26
+
+    if-eqz v24, :cond_17
+
+    .line 7646
+    move-object/from16 v0, p0
+
+    iget-wide v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mPendingPanicGestureUptime:J
+
+    move-wide/from16 v24, v0
+
+    sub-long v24, v14, v24
+
+    const-wide/16 v26, 0x7530
+
+    cmp-long v24, v24, v26
+
+    if-gtz v24, :cond_16
+
+    const/16 v17, 0x1
+
+    .line 7647
+    .local v17, "pendingPanic":Z
+    :goto_9
+    if-eqz v17, :cond_4
+
+    if-eqz v7, :cond_4
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/PhoneWindowManager;->isStatusBarKeyguard()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_18
+
+    .line 7655
+    :cond_4
+    :goto_a
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarController:Lcom/android/server/policy/StatusBarController;
+
+    move-object/from16 v24, v0
+
+    invoke-virtual/range {v24 .. v24}, Lcom/android/server/policy/StatusBarController;->isTransientShowRequested()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_5
+
+    .line 7656
+    if-eqz v22, :cond_19
+
+    .line 7655
+    :cond_5
+    const/4 v5, 0x0
+
+    .line 7657
+    :goto_b
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarController:Lcom/android/server/policy/BarController;
+
+    move-object/from16 v24, v0
+
+    invoke-virtual/range {v24 .. v24}, Lcom/android/server/policy/BarController;->isTransientShowRequested()Z
+
+    move-result v24
+
+    if-eqz v24, :cond_1b
+
+    .line 7658
+    if-eqz v21, :cond_1a
+
+    const/4 v4, 0x0
+
+    .line 7659
+    .local v4, "denyTransientNav":Z
+    :goto_c
+    if-nez v5, :cond_6
+
+    if-eqz v4, :cond_7
+
+    .line 7661
+    :cond_6
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/PhoneWindowManager;->clearClearableFlagsLw()V
+
+    .line 7662
+    and-int/lit8 p3, p3, -0x8
+
+    .line 7665
+    :cond_7
+    move/from16 v0, p3
+
+    and-int/lit16 v0, v0, 0x800
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_1c
+
+    const/4 v10, 0x1
+
+    .line 7666
+    .local v10, "immersive":Z
+    :goto_d
+    move/from16 v0, p3
+
+    and-int/lit16 v0, v0, 0x1000
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_1d
+
+    const/4 v11, 0x1
+
+    .line 7667
+    :goto_e
+    if-nez v10, :cond_1e
+
+    move v12, v11
+
+    .line 7669
+    :goto_f
+    if-eqz v7, :cond_8
+
+    if-eqz v12, :cond_1f
+
+    .line 7676
+    :cond_8
+    :goto_10
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarController:Lcom/android/server/policy/StatusBarController;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v22
+
+    move/from16 v2, p2
+
+    move/from16 v3, p3
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/policy/StatusBarController;->updateVisibilityLw(ZII)I
+
+    move-result p3
+
+    .line 7679
+    move-object/from16 v0, p0
+
+    move/from16 v1, p2
+
+    invoke-direct {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->isImmersiveMode(I)Z
+
+    move-result v16
+
+    .line 7680
+    .local v16, "oldImmersiveMode":Z
+    move-object/from16 v0, p0
+
+    move/from16 v1, p3
+
+    invoke-direct {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->isImmersiveMode(I)Z
+
+    move-result v13
+
+    .line 7681
+    .local v13, "newImmersiveMode":Z
+    if-eqz p1, :cond_9
+
+    move/from16 v0, v16
+
+    if-eq v0, v13, :cond_9
+
+    .line 7682
+    invoke-interface/range {p1 .. p1}, Landroid/view/WindowManagerPolicy$WindowState;->getOwningPackage()Ljava/lang/String;
+
+    move-result-object v18
+
+    .line 7683
+    .local v18, "pkg":Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mImmersiveModeConfirmation:Lcom/android/server/policy/ImmersiveModeConfirmation;
+
+    move-object/from16 v24, v0
+
+    .line 7684
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/policy/PhoneWindowManager;->isUserSetupComplete()Z
+
+    move-result v25
+
+    .line 7683
+    move-object/from16 v0, v24
+
+    move-object/from16 v1, v18
+
+    move/from16 v2, v25
+
+    invoke-virtual {v0, v1, v13, v2}, Lcom/android/server/policy/ImmersiveModeConfirmation;->immersiveModeChanged(Ljava/lang/String;ZZ)V
+
+    .line 7687
+    .end local v18    # "pkg":Ljava/lang/String;
+    :cond_9
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarController:Lcom/android/server/policy/BarController;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v24
+
+    move/from16 v1, v21
+
+    move/from16 v2, p2
+
+    move/from16 v3, p3
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/policy/BarController;->updateVisibilityLw(ZII)I
+
+    move-result p3
+
+    .line 7689
+    return p3
+
+    .line 7597
+    .end local v4    # "denyTransientNav":Z
+    .end local v7    # "hideNavBarSysui":Z
+    .end local v8    # "hideStatusBarSysui":Z
+    .end local v9    # "hideStatusBarWM":Z
+    .end local v10    # "immersive":Z
+    .end local v11    # "immersiveSticky":Z
+    .end local v13    # "newImmersiveMode":Z
+    .end local v14    # "now":J
+    .end local v16    # "oldImmersiveMode":Z
+    .end local v17    # "pendingPanic":Z
+    .end local v19    # "statusBarHasFocus":Z
+    .end local v20    # "transWin":Landroid/view/WindowManagerPolicy$WindowState;
+    .end local v23    # "type":I
+    :cond_a
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBar:Landroid/view/WindowManagerPolicy$WindowState;
+
+    move-object/from16 v20, v0
+
+    .restart local v20    # "transWin":Landroid/view/WindowManagerPolicy$WindowState;
+    goto/16 :goto_0
+
+    .line 7604
+    .restart local v23    # "type":I
+    :cond_b
+    const/16 v19, 0x0
+
+    .restart local v19    # "statusBarHasFocus":Z
+    goto/16 :goto_1
+
+    .line 7606
+    :cond_c
+    const/16 v6, 0x3806
+
+    .line 7611
+    .local v6, "flags":I
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHideLockScreen:Z
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_d
+
+    .line 7612
+    const v6, -0x3fffc7fa
+
+    .line 7614
+    :cond_d
+    not-int v0, v6
+
+    move/from16 v24, v0
+
+    and-int v24, v24, p3
+
+    and-int v25, p2, v6
+
+    or-int p3, v24, v25
+
+    goto/16 :goto_2
+
+    .line 7624
+    .end local v6    # "flags":I
+    :cond_e
+    const/4 v11, 0x0
+
+    .restart local v11    # "immersiveSticky":Z
+    goto/16 :goto_3
+
+    .line 7627
+    :cond_f
+    const/4 v9, 0x0
+
+    .restart local v9    # "hideStatusBarWM":Z
+    goto/16 :goto_4
+
+    .line 7626
+    .end local v9    # "hideStatusBarWM":Z
+    :cond_10
+    const/4 v9, 0x0
+
+    .restart local v9    # "hideStatusBarWM":Z
+    goto/16 :goto_4
+
+    .line 7630
+    :cond_11
+    const/4 v8, 0x0
+
+    .restart local v8    # "hideStatusBarSysui":Z
+    goto/16 :goto_5
+
+    .line 7632
+    :cond_12
+    const/4 v7, 0x0
+
+    .restart local v7    # "hideNavBarSysui":Z
+    goto/16 :goto_6
+
+    .line 7635
+    :cond_13
+    const/16 v22, 0x1
+
+    .local v22, "transientStatusBarAllowed":Z
+    goto/16 :goto_7
+
+    .end local v22    # "transientStatusBarAllowed":Z
+    :cond_14
+    const/16 v22, 0x0
+
+    .restart local v22    # "transientStatusBarAllowed":Z
+    goto/16 :goto_7
+
+    .line 7641
+    .end local v22    # "transientStatusBarAllowed":Z
+    :cond_15
+    const/16 v21, 0x0
+
+    .local v21, "transientNavBarAllowed":Z
+    goto/16 :goto_8
+
+    .line 7646
+    .end local v21    # "transientNavBarAllowed":Z
+    .restart local v14    # "now":J
+    :cond_16
+    const/16 v17, 0x0
+
+    .restart local v17    # "pendingPanic":Z
+    goto/16 :goto_9
+
+    .line 7645
+    .end local v17    # "pendingPanic":Z
+    :cond_17
+    const/16 v17, 0x0
+
+    .restart local v17    # "pendingPanic":Z
+    goto/16 :goto_9
+
+    .line 7647
+    :cond_18
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mKeyguardDrawComplete:Z
+
+    move/from16 v24, v0
+
+    if-eqz v24, :cond_4
+
+    .line 7650
+    const-wide/16 v24, 0x0
+
+    move-wide/from16 v0, v24
+
+    move-object/from16 v2, p0
+
+    iput-wide v0, v2, Lcom/android/server/policy/PhoneWindowManager;->mPendingPanicGestureUptime:J
+
+    .line 7651
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mStatusBarController:Lcom/android/server/policy/StatusBarController;
+
+    move-object/from16 v24, v0
+
+    invoke-virtual/range {v24 .. v24}, Lcom/android/server/policy/StatusBarController;->showTransient()V
+
+    .line 7652
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mNavigationBarController:Lcom/android/server/policy/BarController;
+
+    move-object/from16 v24, v0
+
+    invoke-virtual/range {v24 .. v24}, Lcom/android/server/policy/BarController;->showTransient()V
+
+    goto/16 :goto_a
+
+    .line 7656
+    :cond_19
+    move v5, v8
+
+    .local v5, "denyTransientStatus":Z
+    goto/16 :goto_b
+
+    .line 7658
+    .end local v5    # "denyTransientStatus":Z
+    :cond_1a
+    const/4 v4, 0x1
+
+    .restart local v4    # "denyTransientNav":Z
+    goto/16 :goto_c
+
+    .line 7657
+    .end local v4    # "denyTransientNav":Z
+    :cond_1b
+    const/4 v4, 0x0
+
+    .restart local v4    # "denyTransientNav":Z
+    goto/16 :goto_c
+
+    .line 7665
+    :cond_1c
+    const/4 v10, 0x0
+
+    .restart local v10    # "immersive":Z
+    goto/16 :goto_d
+
+    .line 7666
+    :cond_1d
+    const/4 v11, 0x0
+
+    goto/16 :goto_e
+
+    .line 7667
+    :cond_1e
+    const/4 v12, 0x1
+
+    .local v12, "navAllowedHidden":Z
+    goto/16 :goto_f
+
+    .line 7669
+    .end local v12    # "navAllowedHidden":Z
+    :cond_1f
+    invoke-interface/range {p1 .. p1}, Landroid/view/WindowManagerPolicy$WindowState;->getBaseType()I
+
+    move-result v24
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v24
+
+    invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->windowTypeToLayerLw(I)I
+
+    move-result v24
+
+    .line 7670
+    const/16 v25, 0x7e6
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v25
+
+    invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->windowTypeToLayerLw(I)I
+
+    move-result v25
+
+    .line 7669
+    move/from16 v0, v24
+
+    move/from16 v1, v25
+
+    if-le v0, v1, :cond_8
+
+    .line 7673
+    and-int/lit8 p3, p3, -0x3
+
+    goto/16 :goto_10
+.end method
+
 .method private updateSystemUiVisibilityLw()I
     .locals 13
 
