@@ -76,12 +76,6 @@ system/app/LatinIME/lib/arm 0 0 755 selabel=u:object_r:system_file:s0 capabiliti
 system/app/LatinIME/lib/arm/libjni_latinime.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/LatinImeGoogle 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/LatinImeGoogle/LatinImeGoogle.apk 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/LatinImeGoogle/lib 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/LatinImeGoogle/lib/arm 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/LatinImeGoogle/lib/arm/libcerebra_sense_conv2query_jni.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/LatinImeGoogle/lib/arm/libcerebra_sense_local_model_lookup_jni.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/LatinImeGoogle/lib/arm/libjni_delight4decoder.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/LatinImeGoogle/lib/arm/libtensorflow_jni.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/LiveWallpapers 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/LiveWallpapers/LiveWallpapers.apk 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/LiveWallpapersPicker 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
@@ -140,9 +134,6 @@ system/app/WallpaperPicker 0 0 755 selabel=u:object_r:system_file:s0 capabilitie
 system/app/WallpaperPicker/WallpaperPicker.apk 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/WebViewGoogle 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/WebViewGoogle/WebViewGoogle.apk 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/WebViewGoogle/lib 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/WebViewGoogle/lib/arm 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
-system/app/WebViewGoogle/lib/arm/libwebviewchromium.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/com.qualcomm.location 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/com.qualcomm.location/com.qualcomm.location.apk 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/app/com.qualcomm.services.location 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
