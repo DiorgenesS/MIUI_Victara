@@ -47,7 +47,7 @@
     <!--whether the device supports erase external storage-->
     <bool name="support_erase_external_storage">true</bool>
     <!--whether the device supports headset-->
-    <bool name="support_headset">false</bool>
+    <bool name="support_headset">true</bool>
     <!--whether the device supports cit-->
     <bool name="support_cit">true</bool>
     <!--whether the device is xiaomi-->

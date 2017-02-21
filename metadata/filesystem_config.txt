@@ -1146,6 +1146,7 @@ system/lib/libAisAdapter.so 0 0 644 selabel=u:object_r:system_file:s0 capabiliti
 system/lib/libAlAisLib.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/libAlAisTune.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/libAlAisWrap.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
+system/lib/libDiracAPI_SHARED.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/libEGL.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/libETC1.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/libFFTEm.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
@@ -1487,6 +1488,7 @@ system/lib/modules 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/soundfx 0 0 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/soundfx/libaudiopreprocessing.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/soundfx/libbundlewrapper.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
+system/lib/soundfx/libdirac.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/soundfx/libdownmix.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/soundfx/libeffectproxy.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/lib/soundfx/libldnhncr.so 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
@@ -1995,6 +1997,8 @@ system/usr/share/zoneinfo/tzdata 0 0 644 selabel=u:object_r:system_file:s0 capab
 system/vendor 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/vendor/etc 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/vendor/etc/audio_effects.conf 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
+system/vendor/etc/diracmobile.config 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
+system/vendor/etc/diracmobile_4.config 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/vendor/firmware 0 2000 755 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/vendor/firmware/cmnlib.b00 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
 system/vendor/firmware/cmnlib.b01 0 0 644 selabel=u:object_r:system_file:s0 capabilities=0x0
