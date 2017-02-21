@@ -38,6 +38,10 @@ function mergyXmlPart() {
 	done
 }
 
+if [ $1 = "ContactsProvider" ];then
+    cp $1/smali $2/smali/
+fi
+
 if [ $1 = "InCallUI" ];then
     $XMLMERGYTOOL $1/res/values $2/res/values
 fi
