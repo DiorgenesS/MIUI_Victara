@@ -19,7 +19,7 @@ local-modified-apps :=
 local-modified-jars := org.cyanogenmod.platform
 
 # All apks from MIUI
-local-miui-removed-apps := BugReport FM GameCenter MiGameCenterSDKService MiLivetalk Mipay MiuiCamera MiuiSuperMarket MiuiVideo MiuiVoip QuickSearchBox SogouInput SystemAdSolution VoiceAssist WebViewGoogle XiaomiVip XMPass 
+local-miui-removed-apps := BugReport Email FM GameCenter MiGameCenterSDKService MiLivetalk Mipay MiuiCamera MiuiSuperMarket MiuiVideo MiuiVoip OneTimeInitializer QuickSearchBox SogouInput SystemAdSolution VoiceAssist XiaomiVip XMPass 
 
 local-miui-modified-apps := InCallUI MiuiSystemUI SecurityCenter TeleService
 
